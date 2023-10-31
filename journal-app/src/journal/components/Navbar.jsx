@@ -18,10 +18,6 @@ const Navbar = () => {
     dispatch(backHomePage());
   };
 
-  const [name = "", lastName = ""] = displayName?.trim().includes(" ")
-    ? displayName?.trim().split(" ")
-    : displayName;
-
   const onProfileClick = () => {
     setShowMenu((prev) => !prev);
   };
@@ -48,7 +44,7 @@ const Navbar = () => {
             <img className="rounded-full" src={photoURL} alt="Profile photo" />
           ) : (
             <p className=" font-medium h-full flex items-center justify-center text-xl">
-              {name.slice(0, 1)}
+              {displayName.slice(0, 1)}
             </p>
           )}
         </div>
